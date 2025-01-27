@@ -70,11 +70,40 @@ points:
       # rows:
         # row:
           # shift: [0, -2ky]
+    
+    programming:
+      key:
+        padding: 1ky
+        spread: 1kx
+        asym: clone
+        # splay: -10
+      anchor:
+        ref: matrix_outer_home
+        shift: [-3kx,0]
+      columns:
+        sqr:
+          # key.splay: -10
+        crly:
+        bk_slash:
+      rows:
+        sqr2:
+        crly2:
+        bkslash2:
+  
   mirror: &mirror
     ref: matrix_inner_number
-    distance: 5kx
+    distance: 7kx
 
 # I don't know yet
 outlines:
-pcbs:
-cases:
+  raw:
+    - what: rectangle
+      where: true
+      size: [kx, ky]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+      bound: false
+# pcbs:
+# cases:
