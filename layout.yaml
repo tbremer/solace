@@ -90,20 +90,29 @@ points:
         crly2:
         bkslash2:
   
+    arrows:
+      key:
+        padding: 1ky
+        spread: 1kx
+        asym: clone
+      anchor:
+        shift: [-3.5kx, .75ky]
+        rotate: -10
+      columns:
+        right:
+          rows.top.skip: true
+        middle:
+        left:
+          rows.top.skip: true
+      rows:
+        bottom:
+        top:
+      
   mirror: &mirror
     ref: matrix_inner_number
     distance: 7kx
 
 # I don't know yet
-outlines:
-  raw:
-    - what: rectangle
-      where: true
-      size: [kx, ky]
-  keys:
-    - what: rectangle
-      where: true
-      size: [kx-0.5,ky-0.5]
-      bound: false
+# outlines:
 # pcbs:
 # cases:
