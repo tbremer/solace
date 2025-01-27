@@ -16,6 +16,7 @@ units:
 
 # Areas of the keyboard
 points:
+  rotate: 15
   zones:
     # can be any name
     matrix:
@@ -46,6 +47,7 @@ points:
         home:
         top:
         number:
+    
     thumb_cluster:
       key:
         # padding is vertical space
@@ -58,12 +60,19 @@ points:
         shift: [2, -2]
       columns:
         fn:
+          key.splay: -15
         space_bar:
+          key:
+            width: 1.5kx
+            splay: 75
+            shift: [2, -2]
       # single row areas you can omit the `rows` key
       # rows:
         # row:
           # shift: [0, -2ky]
-
+  mirror: &mirror
+    ref: matrix_inner_number
+    distance: 5kx
 
 # I don't know yet
 outlines:
