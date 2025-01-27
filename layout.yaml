@@ -33,6 +33,7 @@ points:
           rows.modifiers.skip: true
         ring:
           key.stagger: 5
+          rows.modifiers.skip: true
         middle:
           key.stagger: 2.5
         pointer:
@@ -79,12 +80,11 @@ points:
         # splay: -10
       anchor:
         ref: matrix_outer_home
-        shift: [-3kx,0]
+        shift: [-2kx,0]
       columns:
         sqr:
-          # key.splay: -10
+          rows.sqr2.skip: true
         crly:
-        bk_slash:
       rows:
         sqr2:
         crly2:
