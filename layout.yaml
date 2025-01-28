@@ -9,9 +9,11 @@ units:
   ky: cy
   kp: 1ky
   ks: 1kx
+
   # Padding
   # px: kx + 2
   # py: ky + 2
+
   # Magic strings to adjust key preview in ergogen
   $default_width: cx
   $default_height: cy
@@ -19,7 +21,6 @@ units:
 # Areas of the keyboard
 points:
   zones:
-    # can be any name
     left:
       rotate: 7.5
       key:
@@ -59,7 +60,7 @@ points:
       anchor:
         ref: left_five_ctrl
         rotate: -22.5
-        shift: [2.5kx,-.25ky]
+        shift: [5kx,-12.25]
       key:
         # padding is vertical space
         padding: 1kp
@@ -95,3 +96,45 @@ points:
         ltr_h:
         ltr_y:
         num_7:
+    
+    left_thumb_cluster:
+      mirror:
+        ref: right_zero_ctrl
+        distance: -5.0625kx
+      key:
+        # padding is vertical space
+        padding: 1ky
+        # spread is horizontal space
+        spread: 1kx
+      anchor:
+        # refs are built like this: `${zone}_${column}_${row}`
+        ref: left_five_ctrl #matrix_inner_modifiers
+        shift: [4, -4]
+      columns:
+        fn:
+          key.splay: -15
+        space_bar:
+          key:
+            width: 1.5kx
+            splay: 75
+            shift: [-4, -4]
+
+    arrows:
+      # rotate: 7.5
+      anchor:
+        ref: right_seven_ctrl
+        shift: [-.75kx, .75ky]
+      key:
+        # padding is vertical space
+        padding: 1ky
+        # spread is horizontal space
+        spread: 1kx
+      columns:
+        zero:
+          rows.one.skip: true
+        one:
+        two:
+          rows.one.skip: true
+      rows:
+        zero:
+        one:
