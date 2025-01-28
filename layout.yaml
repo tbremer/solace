@@ -4,115 +4,94 @@ meta:
 
 # Defined variables
 units:
-  # Spacing
+  # Key specific stuff
   kx: cx
   ky: cy
+  kp: 1ky
+  ks: 1kx
   # Padding
-  px: kx + 2
-  py: ky + 2
+  # px: kx + 2
+  # py: ky + 2
   # Magic strings to adjust key preview in ergogen
   $default_width: cx
   $default_height: cy
 
 # Areas of the keyboard
 points:
-  rotate: 15
   zones:
     # can be any name
-    matrix:
+    left:
+      rotate: 7.5
       key:
         # padding is vertical space
-        padding: 1ky
+        padding: 1kp
         # spread is horizontal space
-        spread: 1kx
+        spread: 1ks
       # `columns` is an ergogen magic string
+      # columns are left to right
       columns:
-        outer:
-          rows.modifiers.skip: true
-        pinky:
-          rows.modifiers.skip: true
-        ring:
+        zero:
+          rows.ctrl.skip: true
+        one:
+          rows.ctrl.skip: true
+        two:
           key.stagger: 5
-          rows.modifiers.skip: true
-        middle:
+          rows.ctrl.skip: true
+        three:
           key.stagger: 2.5
-        pointer:
+        four:
           key.stagger: -2.5
-        inner:
-          rows.modifiers.skip: true
+        five:
+          rows.ctrl.skip: true
           key.stagger: -2.5
       # `rows` is an ergogen magic string
+      # rows go from bottom to top
+      # for this I am labeling them as if they were the
+      #  far-left side of a typical keyboard
       rows:
-        modifiers:
-        bottom:
-        home:
-        top:
-        number:
-    
-    thumb_cluster:
+        ctrl:
+        shift:
+        capslock:
+        tab:
+        tilde:
+          
+    right:
+      anchor:
+        ref: left_five_ctrl
+        rotate: -22.5
+        shift: [2.5kx,-.25ky]
       key:
         # padding is vertical space
-        padding: 1ky
+        padding: 1kp
         # spread is horizontal space
-        spread: 1kx
-      anchor:
-        # refs are built like this: `${zone}_${column}_${row}`
-        ref: matrix_inner_modifiers
-        shift: [2, -2]
+        spread: 1ks
       columns:
-        fn:
-          key.splay: -15
-        space_bar:
-          key:
-            width: 1.5kx
-            splay: 75
-            shift: [2, -2]
-      # single row areas you can omit the `rows` key
-      # rows:
-        # row:
-          # shift: [0, -2ky]
-    
-    programming:
-      key:
-        padding: 1ky
-        spread: 1kx
-        asym: clone
-        # splay: -10
-      anchor:
-        ref: matrix_outer_home
-        shift: [-2kx,0]
-      columns:
-        sqr:
-          rows.sqr2.skip: true
-        crly:
+        zero:
+          rows.ctrl.skip: true
+        one:
+          key.stagger: 2.5
+        two:
+          key.stagger: 2.5
+        three:
+          rows.ctrl.skip: true
+          key.stagger: -2.5
+        four:
+          rows.ctrl.skip: true
+          key.stagger: -5
+        five:
+          rows.ctrl.skip: true
+        six:
+          rows:
+            ctrl.skip: true
+            ltr_n.skip: true
+        seven:
+          rows:
+            ctrl.skip: true
+            ltr_n.skip: true
+            ltr_h.skip: true
       rows:
-        sqr2:
-        crly2:
-        bkslash2:
-  
-    arrows:
-      key:
-        padding: 1ky
-        spread: 1kx
-        asym: clone
-      anchor:
-        shift: [-3.5kx, .75ky]
-        rotate: -10
-      columns:
-        right:
-          rows.top.skip: true
-        middle:
-        left:
-          rows.top.skip: true
-      rows:
-        bottom:
-        top:
-      
-  mirror: &mirror
-    ref: matrix_inner_number
-    distance: 7kx
-
-# I don't know yet
-# outlines:
-# pcbs:
-# cases:
+        ctrl:
+        ltr_n:
+        ltr_h:
+        ltr_y:
+        num_7:
