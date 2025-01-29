@@ -20,14 +20,15 @@ units:
 
 # Areas of the keyboard
 points:
+  key:
+    # padding is vertical space
+    padding: 1.0625kp
+    # spread is horizontal space
+    spread: 1.0625ks
+
   zones:
     left:
       rotate: 7.5
-      key:
-        # padding is vertical space
-        padding: 1kp
-        # spread is horizontal space
-        spread: 1ks
       # `columns` is an ergogen magic string
       # columns are rendered left to right
       columns:
@@ -61,9 +62,6 @@ points:
         ref: left_five_ctrl
         rotate: -22.5
         shift: [5kx,-12.25]
-      key:
-        padding: 1kp
-        spread: 1ks
       columns:
         zero:
           rows.ctrl.skip: true
@@ -99,9 +97,6 @@ points:
       mirror:
         ref: right_zero_ctrl
         distance: -5.0625kx
-      key:
-        padding: 1ky
-        spread: 1kx
       anchor:
         ref: left_five_ctrl
         shift: [4, -4]
@@ -118,9 +113,6 @@ points:
       anchor:
         ref: right_seven_ctrl
         shift: [-.75kx, .75ky]
-      key:
-        padding: 1ky
-        spread: 1kx
       columns:
         zero:
           rows.one.skip: true
