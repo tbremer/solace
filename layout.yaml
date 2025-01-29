@@ -34,7 +34,7 @@ points:
 
   zones:
     left:
-      rotate: 7.5
+      rotate: -6
       # `columns` is an ergogen magic string
       # columns are rendered left to right
       columns:
@@ -66,8 +66,8 @@ points:
     right:
       anchor:
         ref: left_five_ctrl
-        rotate: -22.5
-        shift: [5kx,-12.25]
+        rotate: 12
+        shift: [5kx,8]
       columns:
         zero:
           rows.ctrl.skip: true
@@ -118,7 +118,7 @@ points:
     arrows:
       anchor:
         ref: right_seven_ctrl
-        shift: [-.75kx, .75ky]
+        shift: [-.85kx, .85ky]
       columns:
         zero:
           rows.one.skip: true
