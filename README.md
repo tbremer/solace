@@ -7,7 +7,7 @@ built using [ergogen](https://ergogen.ceoloide.com/) & [flatfootfox's tutorial](
 
 ## layout
 
-![solace-v0](https://github.com/user-attachments/assets/44fb37a3-f89c-43d4-bc95-b67fc932a9ff)
+![image](https://github.com/user-attachments/assets/ca046b21-95a8-4ceb-a736-07c1a8083849)
 
 ## build locally
 
