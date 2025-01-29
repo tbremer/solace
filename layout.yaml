@@ -29,7 +29,7 @@ points:
         # spread is horizontal space
         spread: 1ks
       # `columns` is an ergogen magic string
-      # columns are left to right
+      # columns are rendered left to right
       columns:
         zero:
           rows.ctrl.skip: true
@@ -47,24 +47,22 @@ points:
           key.stagger: -2.5
       # `rows` is an ergogen magic string
       # rows go from bottom to top
-      # for this I am labeling them as if they were the
-      #  far-left side of a typical keyboard
+      # for this I am labeling them as the key on the far-left side
+      # of a typical keyboard
       rows:
         ctrl:
         shift:
         capslock:
         tab:
         tilde:
-          
+
     right:
       anchor:
         ref: left_five_ctrl
         rotate: -22.5
         shift: [5kx,-12.25]
       key:
-        # padding is vertical space
         padding: 1kp
-        # spread is horizontal space
         spread: 1ks
       columns:
         zero:
@@ -84,31 +82,28 @@ points:
         six:
           rows:
             ctrl.skip: true
-            ltr_n.skip: true
+            shift.skip: true
         seven:
           rows:
             ctrl.skip: true
-            ltr_n.skip: true
-            ltr_h.skip: true
+            shift.skip: true
+            capslock.skip: true
       rows:
         ctrl:
-        ltr_n:
-        ltr_h:
-        ltr_y:
-        num_7:
-    
+        shift:
+        capslock:
+        tab:
+        tilde:
+
     left_thumb_cluster:
       mirror:
         ref: right_zero_ctrl
         distance: -5.0625kx
       key:
-        # padding is vertical space
         padding: 1ky
-        # spread is horizontal space
         spread: 1kx
       anchor:
-        # refs are built like this: `${zone}_${column}_${row}`
-        ref: left_five_ctrl #matrix_inner_modifiers
+        ref: left_five_ctrl
         shift: [4, -4]
       columns:
         fn:
@@ -120,14 +115,11 @@ points:
             shift: [-4, -4]
 
     arrows:
-      # rotate: 7.5
       anchor:
         ref: right_seven_ctrl
         shift: [-.75kx, .75ky]
       key:
-        # padding is vertical space
         padding: 1ky
-        # spread is horizontal space
         spread: 1kx
       columns:
         zero:
