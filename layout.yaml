@@ -118,7 +118,7 @@ points:
     arrows:
       anchor:
         ref: right_three_ctrl
-        shift: [-1.0625kx, -1.0625ky]
+        shift: [2.25kx, -0.5ky]
       columns:
         zero:
           rows.one.skip: true
