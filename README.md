@@ -7,7 +7,7 @@ built using [ergogen](https://ergogen.ceoloide.com/) & [flatfootfox's tutorial](
 
 ## layout
 
-![image](https://github.com/user-attachments/assets/ca046b21-95a8-4ceb-a736-07c1a8083849)
+![image](https://github.com/user-attachments/assets/0b288664-10b8-42ef-b2cd-85d69c58e383)
 
 ## build locally
 
