@@ -11,8 +11,8 @@ meta:
 units:
   # user defined variables
   # `key` specific stuff
-  kx: cx
-  ky: cy
+  kx: u
+  ky: u
   kp: 1ky
   ks: 1kx
 
