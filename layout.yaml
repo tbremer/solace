@@ -17,12 +17,12 @@ units:
   ks: 1kx
 
   # Padding
-  # px: kx + 2
-  # py: ky + 2
+  px: kx + 2
+  py: ky + 2
 
   # ergogen global variables
-  $default_width: cx
-  $default_height: cy
+  $default_width: u
+  $default_height: u
 
 # Areas of the keyboard
 points:
@@ -63,11 +63,24 @@ points:
         tab:
         tilde:
 
+    left_thumb_cluster:
+      anchor:
+        ref: left_five_ctrl
+        shift: [0.33kx,-0.33ky]
+      columns:
+        fn:
+          key.rotate: -15
+        space_bar:
+          key:
+            width: 1.5kx
+            rotate: 65
+            shift: [0.25kx,-0.25ky]
+
     right:
       anchor:
         ref: left_five_ctrl
         rotate: 12
-        shift: [5kx,8]
+        shift: [5.5kx,8]
       columns:
         zero:
           rows.ctrl.skip: true
@@ -99,26 +112,24 @@ points:
         tab:
         tilde:
 
-    left_thumb_cluster:
-      mirror:
-        ref: right_zero_ctrl
-        distance: -5.0625kx
+    right_thumb_cluster:
       anchor:
-        ref: left_five_ctrl
-        shift: [4, -4]
+          ref: right_zero_ctrl
+          shift: [-1.33kx, -0.33ky]
       columns:
-        fn:
-          key.splay: -15
         space_bar:
           key:
             width: 1.5kx
-            splay: 75
-            shift: [-4, -4]
+            rotate: -65
+            shift: [-0.25kx,-0.125ky]
+        fn:
+          key.rotate: 15
 
     arrows:
       anchor:
-        ref: right_three_ctrl
-        shift: [2.25kx, -0.5ky]
+        ref: right_five_ctrl
+        shift: [0.25kx, -0.25ky]
+        rotate: 0
       columns:
         zero:
           rows.one.skip: true
@@ -128,3 +139,31 @@ points:
       rows:
         zero:
         one:
+
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  
+  board:
+    - what: polygon
+      points:
+        - ref: left_zero_tilde
+          shift: [0, 0]
+        - ref: left_zero_shift
+          shift: [0, 0]
+        - ref: left_three_ctrl
+          shift: [0, 0]
+        - ref: left_four_ctrl
+          shift: [0, 0]
+        - ref: left_thumb_cluster_fn
+          shift: [0, 0]
+        - ref: left_thumb_cluster_space_bar
+          shift: [0, 0]
+        - ref: right_thumb_cluster_space_bar
+          shift: [0, 0]
+        - ref: right_thumb_cluster_fn
+          shift: [0, 0]
+        - ref: right_one_ctrl
+          shift: [0,0]
