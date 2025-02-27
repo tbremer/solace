@@ -172,9 +172,11 @@ outlines:
         - ref: right_two_ctrl
           shift: [1kx, -1.25ky]
         - ref: arrows_zero_zero
-          shift: [-1kx, -0.9ky]
+          shift: [-2kx, -0.7ky]
+        - ref: arrows_zero_zero
+          shift: [-1kx, -0.8ky]
         - ref: arrows_two_zero
-          shift: [1kx, -0.9ky]
+          shift: [1kx, -1ky]
         - ref: right_seven_tilde
           shift: [kx, 1ky]
 
