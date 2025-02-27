@@ -5,6 +5,13 @@ solace
 
 built using [ergogen](https://ergogen.ceoloide.com/) & [flatfootfox's tutorial](https://flatfootfox.com/ergogen-introduction)
 
+## links
+
+- [ergogen](https://ergogen.ceoloide.com/)
+- [ergogen docs](https://docs.ergogen.xyz/)
+- [flatfootfox's tutorial](https://flatfootfox.com/ergogen-introduction)
+- [ai03 Plate Generator](https://kbplate.ai03.com/)
+
 ## layout
 
 ![image](https://github.com/user-attachments/assets/0b288664-10b8-42ef-b2cd-85d69c58e383)
