@@ -144,26 +144,42 @@ outlines:
   raw:
     - what: rectangle
       where: true
-      size: [px, py]
+      size: [kx, ky]
   
   board:
     - what: polygon
+      operation: stack
+      fillet: 2
       points:
         - ref: left_zero_tilde
-          shift: [0, 0]
+          shift: [-1kx, 1ky]
         - ref: left_zero_shift
-          shift: [0, 0]
+          shift: [-1kx, -1ky]
         - ref: left_three_ctrl
-          shift: [0, 0]
+          shift: [-1kx, -1ky]
         - ref: left_four_ctrl
-          shift: [0, 0]
+          shift: [-1kx, -1ky]
         - ref: left_thumb_cluster_fn
-          shift: [0, 0]
+          shift: [1kx, -1.25ky]
         - ref: left_thumb_cluster_space_bar
-          shift: [0, 0]
+          shift: [-1kx, -1ky]
         - ref: right_thumb_cluster_space_bar
-          shift: [0, 0]
+          shift: [1kx, -1ky]
         - ref: right_thumb_cluster_fn
-          shift: [0, 0]
+          shift: [1kx, -1.5ky]
         - ref: right_one_ctrl
-          shift: [0,0]
+          shift: [1kx, -1.55ky]
+        - ref: right_two_ctrl
+          shift: [1kx, -1.65ky]
+        - ref: arrows_zero_zero
+          shift: [-1kx, -1ky]
+        - ref: arrows_two_zero
+          shift: [1kx, -1ky]
+        - ref: right_seven_tilde
+          shift: [1kx, 1ky]
+      
+
+  altogether:
+    - name: board
+    - operation: subtract
+      name: raw
