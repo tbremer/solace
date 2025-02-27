@@ -17,12 +17,12 @@ units:
   ks: 1kx
 
   # Padding
-  px: kx + 2
-  py: ky + 2
+  # px: kx + 4
+  # py: ky + 4
 
   # ergogen global variables
-  $default_width: u
-  $default_height: u
+  # $default_width: u
+  # $default_height: u
 
 # Areas of the keyboard
 points:
@@ -149,7 +149,7 @@ outlines:
   board:
     - what: polygon
       operation: stack
-      fillet: 2
+      fillet: 4
       points:
         - ref: left_zero_tilde
           shift: [-1kx, 1ky]
@@ -166,18 +166,17 @@ outlines:
         - ref: right_thumb_cluster_space_bar
           shift: [1kx, -1ky]
         - ref: right_thumb_cluster_fn
-          shift: [1kx, -1.5ky]
-        - ref: right_one_ctrl
-          shift: [1kx, -1.55ky]
-        - ref: right_two_ctrl
-          shift: [1kx, -1.65ky]
-        - ref: arrows_zero_zero
-          shift: [-1kx, -1ky]
-        - ref: arrows_two_zero
           shift: [1kx, -1ky]
+        - ref: right_one_ctrl
+          shift: [1kx, -1ky]
+        - ref: right_two_ctrl
+          shift: [1kx, -1.25ky]
+        - ref: arrows_zero_zero
+          shift: [-1kx, -0.9ky]
+        - ref: arrows_two_zero
+          shift: [1kx, -0.9ky]
         - ref: right_seven_tilde
-          shift: [1kx, 1ky]
-      
+          shift: [kx, 1ky]
 
   altogether:
     - name: board
