@@ -12,6 +12,12 @@ built using [ergogen](https://ergogen.ceoloide.com/) & [flatfootfox's tutorial](
 - [flatfootfox's tutorial](https://flatfootfox.com/ergogen-introduction)
 - [ai03 Plate Generator](https://kbplate.ai03.com/)
 
+## parts
+
+- [helios](https://keeb.supply/products/0xcb-helios)
+- solderless hotswap socket
+- [diodes](https://keeb.supply/products/tht-diodes)
+
 ## layout
 
 ![image](https://github.com/user-attachments/assets/0b288664-10b8-42ef-b2cd-85d69c58e383)
