@@ -4,7 +4,7 @@ meta:
   version: 0.0.1
   author: tbremer
   # misc metadata
-  name: solace
+  name: solace-unibody
   description: sofle-like/alice-like 1u unibody keyboard
   url: https://github.com/tbremer/solace
 

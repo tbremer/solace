@@ -1,0 +1,141 @@
+meta:
+  # ergogen specific info
+  engine: 4.1.0
+  version: 0.0.1
+  author: tbremer
+  # misc metadata
+  name: solace-left
+  description: sofle/alice-like 1u unibody keyboard
+  url: https://github.com/tbremer/solace
+
+units:
+  # user defined variables
+  # `key` specific stuff
+  kx: u
+  ky: u
+  kp: 1ky
+  ks: 1kx
+
+
+# Areas of the keyboard
+points:
+  key:
+    # padding is vertical space
+    padding: 1.0625kp
+    # spread is horizontal space
+    spread: 1.0625ks
+
+  zones:
+    left:
+      # rotate: -6
+      # `columns` is an ergogen magic string
+      # columns are rendered left to right
+      columns:
+        zero:
+          rows.ctrl.skip: true
+        one:
+          rows.ctrl.skip: true
+        two:
+          key.stagger: 5
+          rows.ctrl.skip: true
+        three:
+          key.stagger: 2.5
+        four:
+          key.stagger: -2.5
+        five:
+          rows.ctrl.skip: true
+          key.stagger: -2.5
+      # `rows` is an ergogen magic string
+      # rows go from bottom to top
+      # for this I am labeling them as the key on the far-left side
+      # of a typical keyboard
+      rows:
+        ctrl:
+        shift:
+        capslock:
+        tab:
+        tilde:
+
+    left_thumb_cluster:
+      anchor:
+        ref: left_five_ctrl
+        shift: [0.33kx,-0.33ky]
+      columns:
+        fn:
+          key.rotate: -15
+        space:
+          key:
+            shift: [0.25kx,-0.25ky]
+            rotate: -20
+
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [kx, ky]
+  
+  board_controller:
+    - what: polygon
+      operation: stack
+      fillet: 4
+      points:
+        - ref: left_zero_tilde
+          shift: [-1kx, 1.25ky]
+        - ref: left_zero_shift
+          shift: [-1kx, -1ky]
+        - ref: left_three_ctrl
+          shift: [-1kx, -1ky]
+        - ref: left_four_ctrl
+          shift: [-1kx, -1ky]
+        - ref: left_thumb_cluster_fn
+          shift: [-0.5kx, -0.75ky]
+        - ref: left_thumb_cluster_fn
+          shift: [0.5kx, -0.75ky]
+        - ref: left_thumb_cluster_space
+          shift: [-0.5kx, -0.75ky]
+        - ref: left_thumb_cluster_space
+          shift: [0.75kx, -0.75ky]
+        - ref: left_thumb_cluster_space
+          shift: [0.75kx, 0.5ky]
+        - ref: left_five_tilde
+          shift: [2.5kx, 1ky]
+    
+  board:
+  - what: polygon
+    operation: stack
+    fillet: 4
+    points:
+      - ref: left_zero_tilde
+        shift: [-1kx, 1.25ky]
+      - ref: left_zero_shift
+        shift: [-1kx, -1ky]
+      - ref: left_three_ctrl
+        shift: [-1kx, -1ky]
+      - ref: left_four_ctrl
+        shift: [-1kx, -1ky]
+      - ref: left_thumb_cluster_fn
+        shift: [-0.5kx, -0.75ky]
+      - ref: left_thumb_cluster_fn
+        shift: [0.5kx, -0.75ky]
+      - ref: left_thumb_cluster_space
+        shift: [-0.5kx, -0.75ky]
+      - ref: left_thumb_cluster_space
+        shift: [0.75kx, -0.75ky]
+      - ref: left_thumb_cluster_space
+        shift: [0.75kx, 0.5ky]
+      - ref: left_thumb_cluster_space
+        shift: [0.75kx, 0.75ky]
+      - ref: left_five_shift
+        shift: [1kx, -0.5ky]
+      - ref: left_five_tilde
+        shift: [1kx, 1ky]
+
+  complete_controller:
+    - name: board_controller
+    - operation: subtract
+      name: raw
+  
+  complete:
+    - name: board
+    - operation: subtract
+      name: raw

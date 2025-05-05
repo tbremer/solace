@@ -1,0 +1,146 @@
+meta:
+  # ergogen specific info
+  engine: 4.1.0
+  version: 0.0.1
+  author: tbremer
+  # misc metadata
+  name: solace
+  description: sofle-like/alice-like 1u unibody keyboard
+  url: https://github.com/tbremer/solace
+
+units:
+  # user defined variables
+  # `key` specific stuff
+  kx: u
+  ky: u
+  kp: 1ky
+  ks: 1kx
+
+  # Padding
+  # px: kx + 4
+  # py: ky + 4
+
+  # ergogen global variables
+  # $default_width: u
+  # $default_height: u
+
+# Areas of the keyboard
+points:
+  key:
+    # padding is vertical space
+    padding: 1.0625kp
+    # spread is horizontal space
+    spread: 1.0625ks
+
+  zones:
+    right:
+      columns:
+        zero:
+          rows.ctrl.skip: true
+        one:
+          key.stagger: 2.5
+        two:
+          key.stagger: 2.5
+        three:
+          rows.ctrl.skip: true
+          key.stagger: -2.5
+        four:
+          rows.ctrl.skip: true
+          key.stagger: -5
+        five:
+          rows.ctrl.skip: true
+        six:
+          rows:
+            ctrl.skip: true
+            shift.skip: true
+        seven:
+          rows:
+            ctrl.skip: true
+            shift.skip: true
+            capslock.skip: true
+      rows:
+        ctrl:
+        shift:
+        capslock:
+        tab:
+        tilde:
+
+    thumb_cluster:
+      anchor:
+          ref: right_zero_ctrl
+          shift: [-1.33kx, -0.33ky]
+      columns:
+        space:
+          key:
+            width: 1.5kx
+            rotate: 20
+            shift: [-0.25kx,-0.125ky]
+        fn:
+          key.rotate: 15
+
+    arrows:
+      anchor:
+        ref: right_five_ctrl
+        shift: [0.25kx, -0.25ky]
+        rotate: 0
+      columns:
+        zero:
+          rows.one.skip: true
+        one:
+        two:
+          rows.one.skip: true
+      rows:
+        zero:
+        one:
+
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [kx, ky]
+  
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 4
+      points:
+        - ref: right_zero_tilde
+          shift: [-0.75kx, 1ky]
+        - ref: right_seven_tilde
+          shift: [1kx, 1.125ky]
+        - ref: arrows_two_zero
+          shift: [0.75kx, -0.75ky]
+        - ref: thumb_cluster_space
+          shift: [-0.75kx, -0.75ky]
+        - ref: thumb_cluster_space
+          shift: [-0.75kx, 0.75ky]
+        - ref: thumb_cluster_space
+          shift: [0.75kx, 0.75ky]
+        - ref: right_zero_shift
+          shift: [-0.75kx, -0.45ky]
+  
+  board_controller:
+    - what: polygon
+      operation: stack
+      fillet: 4
+      points:
+        - ref: right_zero_tilde
+          shift: [-2.5kx, 1ky]
+        - ref: right_seven_tilde
+          shift: [1kx, 1.125ky]
+        - ref: arrows_two_zero
+          shift: [0.75kx, -0.75ky]
+        - ref: thumb_cluster_space
+          shift: [-0.75kx, -0.75ky]
+        - ref: thumb_cluster_space
+          shift: [-0.75kx, 0.75ky]
+
+  complete:
+    - name: board
+    - operation: subtract
+      name: raw
+
+  complete_controller:
+    - name: board_controller
+    - operation: subtract
+      name: raw
